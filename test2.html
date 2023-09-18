@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <script src="https://kit.fontawesome.com/9cb376baee.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;800&family=Waiting+for+the+Sunrise&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/test2.css">
+</head>
+
+<body onload=init()>
+
+
+
+  <header>
+
+    <div class="menu_bar">
+      <div class="container" onclick="openMenu(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+
+      <div class="navbar_ctn">
+        <div class="navbar">
+          <li><a class="nav_item" href="#b" onclick="console.log('#b')">About Me</a></li>
+          <li><a class="nav_item" href="#c">Projects</a></li>
+          <li><a class="nav_item" href="#d">Contact Me</a></li>
+          <li><a class="nav_item" href="#e">Coming Soon...</a></li>
+        </div>
+      </div>
+      <div class="commission_btn_ctn">
+        <a class="commission_btn">
+          <span class="handwriting">Commission</span>
+        </a>
+      </div>
+    </div>
+
+
+
+  </header>
+
+
+
+  <main class="outer-wrapper">
+    <div class="wrapper">
+      <article class="section" id="a">
+
+        <div class="home_text">
+          <div class="">
+            <span class="handwriting intro_txt">Ediubong Ekwere Presents:</span>
+          </div>
+
+          <div class="noselect">
+            <span class="body_title" data-text="JUNO AND ICE">JUNO AND ICE</span>
+          </div>
+
+          <div class="body_text">
+            <span class="handwriting">A Portfolio</span>
+          </div>
+
+          <div class="noselect body_title_clear">
+            <span>JUNO AND ICE</span>
+          </div>
+        </div>
+
+        <div class="contact_icons">
+          <ul class="icon_list">
+            <li class="icon"><a href="#"><i class="fa-brands fa-linkedin fa-lg"></i></a></li>
+            <li class="icon"><a href="#"><i class="fa-brands fa-github fa-lg"></i></a></li>
+            <li class="icon"><a href="#"><i class="fa-brands fa-x-twitter fa-lg"></i></a></li>
+            <li class="icon"><a href="#"><i class="fa-brands fa-instagram fa-lg"></i></a></li>
+            <li class="icon"><a href="#"><i class="fa-brands fa-discord fa-lg"></i></a></li>
+            <li class="icon"><a href="#"><i class="fa-brands fa-tiktok fa-lg"></i></a></li>
+            <li class="icon"><a href="#"><i class="fa-brands fa-youtube fa-lg"></i></a></li>
+            <li class="icon"><a href="#"><i class="fa-regular fa-envelope fa-lg"></i></a></li>
+          </ul>
+        </div>
+
+      </article>
+
+
+      <article class="section about_me_ctn" id="b">
+
+        <div class="about_me_sec-1 hidden">
+          <div class="about_me_box">
+            <div class="info_box">
+              <h1>ABOUT ME</h1>
+              <p class="about_me">
+                <span class="handwriting">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, ipsam reprehenderit. Sit libero dignissimos
+                  dolorem vero explicabo maiores nihil doloribus eaque ab perspiciatis necessitatibus ut molestias numquam
+                  delectus, possimus magni?
+                </span>
+              </p>
+            </div>
+            <div class="img_ctn_1">
+              <img class="img-Edi" src="./assets/images/thinker.jpeg" alt="a photo of Ediubong, in a thinking pose.">
+            </div>
+          </div>
+        </div>
+
+        <div class="about_me_sec-2">
+          <div class="info_box_2">
+            <h3>WHO IS JUNO AND ICE?</h3>
+            <p class="about_me">
+              <span class="handwriting">
+                The Creative.
+              </span>
+            </p>
+            <div class="continue_btn_ctn">
+              <a class="continue_btn">
+                <span class="handwriting">Show More</span>
+              </a>
+            </div>
+            
+
+          </div>
+        </div>
+
+        <div class="about_me_sec-3 hidden">
+          <div class="img_ctn_1">
+            <img class="img-Edi" src="./assets/images/catman.jpeg" alt="a photo of Ediubong, in a thinking pose.">
+          </div>
+
+          <div class="info_box_3">
+            <h1>ABOUT ME</h1>
+            <p class="about_me">
+              <span class="handwriting">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, ipsam reprehenderit. Sit libero dignissimos
+                dolorem vero explicabo maiores nihil doloribus eaque ab perspiciatis necessitatibus ut molestias numquam
+                delectus, possimus magni?
+              </span>
+            </p>
+          </div>
+        </div>
+
+      </article>
+      <article class="section" id="c">
+        <h2>03</h2>
+      </article>
+      <article class="section" id="d">
+        <h2>04</h2>
+      </article>
+      <article class="section" id="e">
+        <h2>05</h2>
+      </article>
+      <article class="section" id="f">
+        <h2>06</h2>
+      </article>
+    </div>
+  </main>
+
+
+  <!-- MENU _____________________ -->
+
+
+  <!-- <header class="large">
+      <div class="container">
+        <nav>
+          <a><div class="logo"></div></a>
+            <ul>
+              <li><a href="#a">01</a></li>
+              <li><a href="#b">02</a></li>
+              <li><a href="#c">03</a></li>
+              <li><a href="#d">04</a></li>
+           </ul>
+        </nav>
+      </div>
+    </header> -->
+
+  <script src="https://cdn.jsdelivr.net/npm/universalsmoothscroll@latest/universalsmoothscroll-min.js">
+  </script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <script src="./assets/js/testScript.js"></script>
+</body>
+
+</html>
+
+
+</html>

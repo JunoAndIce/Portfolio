@@ -1,0 +1,375 @@
+* {
+  --font-poppins: 'Poppins', 'sans-seriff';
+  --font-sunrise: 'Waiting for the Sunrise', cursive;
+}
+
+.handwriting {
+  font-family: var(--font-sunrise);
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.hidden {
+  display: none;
+}
+
+html,
+body {
+  background-color: #101010;
+  color: #ffffff;
+  font-family: var(--font-poppins);
+  padding: 0;
+  margin: 0;
+  overflow-y: hidden;
+}
+
+.outer-wrapper {
+  width: auto;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.section {
+  flex-shrink: 0; /* ADDED insted of the width/height of the wrapper */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* #a { background-color: #ccc; } */
+/* #b { background-color: #fff; } */
+/* #c { background-color: #ccc; } */
+/* #d { background-color: #fff; } */
+/* #e { background-color: #ccc; } */
+/* #f { background-color: #fff; } */
+
+h2 {
+  text-align: center;
+  font-size: 200px;
+  margin: 0;
+}
+
+/* NAVBAR AND HEADER  */
+header {
+  position: fixed;
+  width: 100vw;
+  z-index: 1;
+  height: 60px;
+}
+
+.menu_bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;  
+  padding: 10px;
+}
+
+.container {
+  display: inline-block;
+  cursor: pointer;
+  flex: 0 0 33%;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 30px;
+  height: 5px;
+  background-color: #ffffff;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+
+.commission_btn_ctn {
+  flex: 0 0 33%;
+  text-align: right;  
+}
+
+.commission_btn {
+  font-weight: 300;
+  border-radius: 1.25rem;
+  padding: .225rem 1.625rem;
+  line-height: 2.5rem;
+
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.navbar_ctn {
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  flex: 1 1 auto;
+  /* transform: scale(1.875); */
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.navbar {
+  text-align: left;
+  list-style-type: none;
+}
+
+.navbar li{
+  margin-right: 30px;
+  display: none;
+}
+
+.nav_item {
+  color: white;
+  text-decoration: none;
+  filter: brightness(50%);
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.nav_item:hover {
+  filter: brightness(100%);
+}
+
+
+/* SECTION 1: HOME  */
+.intro_txt,
+.body_text {
+  font-size: 40px;
+}
+
+.body_title {
+  font-size: 200px;
+  font-weight: 800;
+  pointer-events: none;
+  /* text-shadow: 0.03em 0.02em 0 rgb(151, 109, 243),
+              -0.035em -0.02em 0 rgb(113, 218, 244); */
+}
+
+
+.body_title_clear {
+  position: fixed;
+  bottom: 10%;
+  right: 0%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.body_title_clear span {
+  font-size: 250px;
+  font-weight: 800;
+  -webkit-text-stroke: 1px #DDDDDD20;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact_icons {
+  height: 7rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: fill-available;
+  padding: 0 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon_list {
+  display: flex;
+  gap: 50px;
+  padding: 0;
+  list-style-type: none;
+}
+
+i {
+  color: white;
+}
+
+.fa-youtube:hover {
+  color: rgb(255, 0, 0);
+}
+
+.fa-x-twitter:hover {
+  color: rgb(29, 161, 242);
+}
+
+.fa-discord:hover {
+  color: rgb(114,137,218);
+}
+
+.fa-instagram:hover {
+  color: rgb(225, 48, 108);
+}
+
+.fa-linkedin:hover {
+  color: rgb(0, 119, 181);
+}
+
+.fa-envelope:hover {
+  color: rgb(244, 180, 0);
+}
+
+.fa-github:hover {
+  color: rgb(45, 186, 78);
+}
+
+.fa-tiktok:hover {
+  /* color: rgb(244, 180, 0); */
+  text-shadow: 0.06em 0.03em 0 rgba(255, 0, 80,0.75),
+              -0.055em -0.05em 0 rgba(0, 242, 234,0.75);
+}
+
+/* SECTION 2: ABOUT ME */
+
+
+.about_me_ctn {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  
+  position: relative;
+}
+
+.about_me {
+  width: 400px;
+  font-size: 22px;
+}
+
+/* top | right | bottom | left */
+.about_me_box {
+  margin: 100px 0px 0 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.about_me_sec-2 {
+  margin: auto;
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+
+.about_me_sec-2 > div > h3 {
+  font-size: 35px;
+}
+
+.info_box_2 {
+text-align: center;
+}
+
+/* .continue_btn_ctn {
+  text-align: center;
+} */
+
+.continue_btn {
+  font-weight: 300;
+  border-radius: 1.25rem;
+  padding: .225rem 1.625rem;
+  line-height: 2.5rem;
+
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.continue_btn:hover,
+.commission_btn:hover {
+  background-color: white;
+  color: black;
+}
+
+.about_me_sec-3 {
+  margin: 100px 60px 0 0;
+}
+
+.img-Edi {
+  /* display: block; */
+  padding: 20px;
+  width: 330px;
+}
+
+/* GLITCH EFFECT. */
+.glitch-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.glitch:before,
+.glitch:after {
+   display: block;
+   content: attr(data-text);
+   position: absolute;
+   top: 310px;
+   left: 10;
+   opacity: 0.8;
+}
+
+.glitch:before {
+   animation: glitch-it 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+   color: rgb(113, 218, 244);
+   z-index: -1;
+}
+
+.glitch:after {
+   animation: glitch-it 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+   color:  rgb(151, 109, 243);
+   z-index: -2;
+}
+
+@keyframes glitch-it {
+   0% {
+      transform: translate(0);
+   }
+   20% {
+      transform: translate(-2px, 2px);
+   }
+   40% {
+      transform: translate(-2px, -2px);
+   }
+   60% {
+      transform: translate(2px, 2px);
+   }
+   80% {
+      transform: translate(2px, -2px);
+   }
+   to {
+      transform: translate(0);
+   }
+}
