@@ -28,10 +28,10 @@
 
       <div class="navbar_ctn">
         <div class="navbar">
-          <li><a class="nav_item" href="#b" onclick="console.log('#b')">About Me</a></li>
-          <li><a class="nav_item" href="#c">Projects</a></li>
-          <li><a class="nav_item" href="#d">Contact Me</a></li>
-          <li><a class="nav_item" href="#e">Coming Soon...</a></li>
+          <li><a class="nav_item" data-id="2" onclick="goToPage('2')">About Me</a></li>
+          <li><a class="nav_item" data-id="3" onclick="goToPage('3')">Projects</a></li>
+          <li><a class="nav_item" data-id="4" onclick="goToPage('4')">Contact Me</a></li>
+          <li><a class="nav_item" data-id="5" onclick="goToPage('5')">Coming Soon...</a></li>
         </div>
       </div>
       <div class="commission_btn_ctn">
@@ -49,7 +49,7 @@
 
   <main class="outer-wrapper">
     <div class="wrapper">
-      <article class="section" id="a">
+      <article class="section" id="1">
 
         <div class="home_text">
           <div class="">
@@ -85,22 +85,42 @@
       </article>
 
 
-      <article class="section about_me_ctn" id="b">
+      <article class="section about_me_ctn" id="2">
 
-        <div class="about_me_sec-1 hidden">
+        <div class="about_me_sec-1 ">
           <div class="about_me_box">
-            <div class="info_box">
-              <h1>ABOUT ME</h1>
+            <div class="info_box hidden" data-order="1">
+              <h1>THE INTRO</h1>
               <p class="about_me">
                 <span class="handwriting">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, ipsam reprehenderit. Sit libero dignissimos
-                  dolorem vero explicabo maiores nihil doloribus eaque ab perspiciatis necessitatibus ut molestias numquam
-                  delectus, possimus magni?
+                  Hi! I'm Ediubong Ekwere and my art name is Juno and Ice.<br>Born in Houston, Texas, I am a 24 year-old
+                  freelance artist, full-stack web developer, and game developer.
                 </span>
               </p>
             </div>
-            <div class="img_ctn_1">
-              <img class="img-Edi" src="./assets/images/thinker.jpeg" alt="a photo of Ediubong, in a thinking pose.">
+            <div class="info_box hidden" data-order="2">
+              <p class="about_me">
+                <span class="handwriting">
+                  Since I was young, I was always fascinated with computers, and their ability to create almost anything
+                  within our wildest imagination.
+                </span>
+              </p>
+            </div>
+            <div class="info_box hidden" data-order="3">
+              <p class="about_me">
+                <span class="handwriting">
+                  Throughout my life, I was able to consume all types of media, from video games, to cartoons and anime,
+                  to live-action film. All made possible by the power of computer code, and great minds coming together
+                  to create a something new.
+                </span>
+              </p>
+            </div>
+            <div class="info_box hidden" data-order="4">
+              <p class="about_me">
+                <span class="handwriting">
+                  I also want to bring my crazy imaginations to life.
+                </span>
+              </p>
             </div>
           </div>
         </div>
@@ -109,48 +129,119 @@
           <div class="info_box_2">
             <h3>WHO IS JUNO AND ICE?</h3>
             <p class="about_me">
-              <span class="handwriting">
+              <span class="handwriting" id="animated-text">
                 The Creative.
               </span>
+              <span id="cursor"></span>
             </p>
             <div class="continue_btn_ctn">
-              <a class="continue_btn">
+              <a class="continue_btn" data-id="2" onclick="loadMoreInfo('hidden')">
                 <span class="handwriting">Show More</span>
               </a>
             </div>
-            
+
 
           </div>
         </div>
 
-        <div class="about_me_sec-3 hidden">
-          <div class="img_ctn_1">
-            <img class="img-Edi" src="./assets/images/catman.jpeg" alt="a photo of Ediubong, in a thinking pose.">
-          </div>
+        <div class="about_me_sec-3">
 
-          <div class="info_box_3">
-            <h1>ABOUT ME</h1>
-            <p class="about_me">
-              <span class="handwriting">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, ipsam reprehenderit. Sit libero dignissimos
-                dolorem vero explicabo maiores nihil doloribus eaque ab perspiciatis necessitatibus ut molestias numquam
-                delectus, possimus magni?
-              </span>
-            </p>
+          <div class="about_me_box-2">
+            <div class="info_box_3 hidden" data-order="6">
+              <h1>THE RUNDOWN</h1>
+
+            </div>
+            <div class="info_box_3 hidden" data-order="7">
+              <div class="intro joined">
+                <h4 class="major">Languages Known:</h4>
+                <div id='current-tech'>
+                  <span>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+                      <img src="https://img.shields.io/badge/-JavaScript-F7DF1E?logo=JavaScript&logoColor=333333" />
+                    </a>
+                  </span>
+                  <span>
+                    <a href="https://www.postgresql.org/">
+                      <img src="https://img.shields.io/badge/-MySQL-336791?logo=MySQL&logoColor=white" />
+                    </a>
+                  </span>
+                  <span>
+                    <a href="https://nodejs.org/">
+                      <img src="https://img.shields.io/badge/Node.js-43853D?style=flat&logo=node.js&logoColor=white">
+                    </a>
+                  </span>
+                  <span>
+                    <a href="https://reactjs.org/">
+                      <img
+                        src="https://img.shields.io/badge/-ReactJs-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB">
+                    </a>
+                  </span>
+                  <span>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
+                      <img src="https://img.shields.io/badge/-CSS3-1572B6?logo=CSS3" /></a>
+                  </span>
+                  <span>
+                    <a href="https://www.heroku.com/home">
+                      <img src="https://img.shields.io/badge/Heroku-430098?style=flat&logo=heroku&logoColor=white" />
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="info_box_3 hidden" data-order="8">
+              <div class="intro joined">
+                <div id='current-tech'>
+                  <span>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+                      <img src="https://img.shields.io/badge/-JavaScript-F7DF1E?logo=JavaScript&logoColor=333333" />
+                    </a>
+                  </span>
+                  <span>
+                    <a href="https://www.postgresql.org/">
+                      <img src="https://img.shields.io/badge/-MySQL-336791?logo=MySQL&logoColor=white" />
+                    </a>
+                  </span>
+                  <span>
+                    <a href="https://nodejs.org/">
+                      <img src="https://img.shields.io/badge/Node.js-43853D?style=flat&logo=node.js&logoColor=white">
+                    </a>
+                  </span>
+                  <span>
+                    <a href="https://reactjs.org/">
+                      <img
+                        src="https://img.shields.io/badge/-ReactJs-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB">
+                    </a>
+                  </span>
+                  <span>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
+                      <img src="https://img.shields.io/badge/-CSS3-1572B6?logo=CSS3" /></a>
+                  </span>
+                  <span>
+                    <a href="https://www.heroku.com/home">
+                      <img src="https://img.shields.io/badge/Heroku-430098?style=flat&logo=heroku&logoColor=white" />
+                    </a>
+                  </span>
+                </div>
+              </div>
+              
+            </div>
+            <!-- <div class="img_ctn_1 hidden" data-order="7">
+              <img class="img-Edi" src="./assets/images/AfricanGarb.jpg" alt="a photo of Ediubong, in a thinking pose.">
+            </div>
+          </div> -->
           </div>
-        </div>
 
       </article>
-      <article class="section" id="c">
+      <article class="section" id="3">
         <h2>03</h2>
       </article>
-      <article class="section" id="d">
+      <article class="section" id="4">
         <h2>04</h2>
       </article>
-      <article class="section" id="e">
+      <article class="section" id="5">
         <h2>05</h2>
       </article>
-      <article class="section" id="f">
+      <article class="section" id="6">
         <h2>06</h2>
       </article>
     </div>
