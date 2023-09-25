@@ -12,95 +12,529 @@
     rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+<!-- CREDITS TO Cristian Davide Conte FOR THE SMOOTH HORIZONTAL SCROLLING  https://github.com/CristianDavideConte/universalSmoothScroll -->
 
-<body>
+<body onload=init()>
 
-  <div class="header_ctn">
-    <header>
+
+
+  <header>
+
+    <div class="menu_bar">
       <div class="container" onclick="openMenu(this)">
         <div class="bar1"></div>
         <div class="bar2"></div>
         <div class="bar3"></div>
       </div>
 
+      <div class="navbar_ctn">
+        <div class="navbar">
+          <li><a class="nav_item" data-id="2" onclick="goToPage('2')">About Me</a></li>
+          <li><a class="nav_item" data-id="3" onclick="goToPage('3')">Projects</a></li>
+          <li><a class="nav_item" data-id="4" onclick="goToPage('4')">Contact Me</a></li>
+          <li><a class="nav_item" data-id="5" onclick="goToPage('5')">Coming Soon...</a></li>
+        </div>
+      </div>
       <div class="commission_btn_ctn">
-        <a class="commission_btn">
+        <a onclick="goToPage('4')" class="commission_btn">
           <span class="handwriting">Commission</span>
         </a>
       </div>
-    </header>
-  </div>
+    </div>
 
-  <main>
-    <div class="scrolling_wrapper home_container">
-      <div class="home_div card">
+
+
+  </header>
+
+
+
+  <main class="outer-wrapper">
+    <div class="wrapper">
+      <article class="section" id="1">
+
         <div class="home_text">
-          <div class="intro_txt">
-            <span class="handwriting">Hello I am:</span>
+          <div class="">
+            <span class="handwriting intro_txt">Hello! I am:</span>
           </div>
-          <div class="body_title">
-            <span class="">JUNO AND ICE</span>
+
+          <div class="no_select">
+            <span class="body_title" data-text="JUNO AND ICE">JUNO AND ICE</span>
           </div>
+
           <div class="body_text">
             <span class="handwriting">A Portfolio by Ediubong Ekwere</span>
           </div>
-          <div class="form_box">
-            <div class="body_title_clear">
-              <span>JUNO AND ICE</span>
+
+          <div class="no_select body_title_clear">
+            <span>JUNO AND ICE</span>
+          </div>
+        </div>
+
+        <div class="contact_icons">
+          <ul class="icon_list">
+            <li class="icon"><a href="#"><i class="fa-brands fa-linkedin fa-lg"></i></a></li>
+            <li class="icon"><a href="#"><i class="fa-brands fa-github fa-lg"></i></a></li>
+            <li class="icon"><a href="#"><i class="fa-brands fa-x-twitter fa-lg"></i></a></li>
+            <li class="icon"><a href="#"><i class="fa-brands fa-instagram fa-lg"></i></a></li>
+            <li class="icon"><a href="#"><i class="fa-brands fa-discord fa-lg"></i></a></li>
+            <li class="icon"><a href="#"><i class="fa-brands fa-tiktok fa-lg"></i></a></li>
+            <li class="icon"><a href="#"><i class="fa-brands fa-youtube fa-lg"></i></a></li>
+            <li class="icon"><a href="#"><i class="fa-regular fa-envelope fa-lg"></i></a></li>
+          </ul>
+        </div>
+
+        <!-- <div class="main_img">
+          <img id="background_img" src="./assets/images/Me/AfricanGarb.jpg"></img>
+        </div> -->
+
+      </article>
+
+
+      <article class="section about_me_ctn" id="2">
+        <div class="about_me_sec-1 ">
+          <div class="about_me_box">
+            <div class="info_box hidden" data-order="1">
+              <h1>THE INTRO</h1>
+              <p class="about_me">
+                <span class="handwriting">
+                  Hi! I'm Ediubong Ekwere and my art name is Juno and Ice.<br>Born in Houston, Texas, I am a 24 year-old
+                  freelance artist, full-stack web developer, and game developer.
+                </span>
+              </p>
+            </div>
+            <div class="info_box hidden" data-order="2">
+              <p class="about_me">
+                <span class="handwriting">
+                  Since I was young, I was always fascinated with computers, and their ability to create almost anything
+                  within our wildest imagination.
+                </span>
+              </p>
+            </div>
+            <div class="info_box hidden" data-order="3">
+              <p class="about_me">
+                <span class="handwriting">
+                  Throughout my life, I was able to consume all types of media, from video games, to cartoons and anime,
+                  to live-action film. All made possible by the power of computer code, and great minds coming together
+                  to create a something new.
+                </span>
+              </p>
+            </div>
+            <div class="info_box hidden" data-order="4">
+              <p class="about_me">
+                <span class="handwriting">
+                  I also want to bring my crazy imaginations to life.
+                </span>
+              </p>
             </div>
           </div>
         </div>
-        <div class="contact_icons">
-          <ul class="icon_list">
-            <li class="icon"><a href="#"><i class="fa-brands fa-linkedin fa-lg"></i></a></li>
-            <li class="icon"><a href="#"><i class="fa-brands fa-github fa-lg"></i></a></li>
-            <li class="icon"><a href="#"><i class="fa-brands fa-x-twitter fa-lg"></i></a></li>
-            <li class="icon"><a href="#"><i class="fa-brands fa-instagram fa-lg"></i></a></li>
-            <li class="icon"><a href="#"><i class="fa-brands fa-discord fa-lg"></i></a></li>
-            <li class="icon"><a href="#"><i class="fa-brands fa-tiktok fa-lg"></i></a></li>
-            <li class="icon"><a href="#"><i class="fa-brands fa-youtube fa-lg"></i></a></li>
-            <li class="icon"><a href="#"><i class="fa-regular fa-envelope fa-lg"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
 
-    <div class="scrolling_wrapper">
-      <div class="card">
-        <div class="contact_icons">
-          <ul class="icon_list">
-            <li class="icon"><a href="#"><i class="fa-brands fa-linkedin fa-lg"></i></a></li>
-            <li class="icon"><a href="#"><i class="fa-brands fa-github fa-lg"></i></a></li>
-            <li class="icon"><a href="#"><i class="fa-brands fa-x-twitter fa-lg"></i></a></li>
-            <li class="icon"><a href="#"><i class="fa-brands fa-instagram fa-lg"></i></a></li>
-            <li class="icon"><a href="#"><i class="fa-brands fa-discord fa-lg"></i></a></li>
-            <li class="icon"><a href="#"><i class="fa-brands fa-tiktok fa-lg"></i></a></li>
-            <li class="icon"><a href="#"><i class="fa-brands fa-youtube fa-lg"></i></a></li>
-            <li class="icon"><a href="#"><i class="fa-regular fa-envelope fa-lg"></i></a></li>
-          </ul>
+        <div class="about_me_sec-2">
+          <div class="info_box_2">
+            <div>
+              <h1>WHO IS JUNO AND ICE?</h1>
+              <p class="about_me">
+                <span class="handwriting" id="animated-text">
+                  The Creative.
+                </span>
+                <span id="cursor"></span>
+              </p>
+            </div>
+            <div class="continue_btn_ctn" id="mainBtn">
+              <a class="continue_btn" data-id="2" onclick="loadMoreInfo('hidden', 'mainBtn')">
+                <span class="handwriting">Show More</span>
+              </a>
+            </div>
+
+
+          </div>
         </div>
-      </div>
+
+        <div class="about_me_sec-3">
+
+          <div class="about_me_box-2">
+
+            <div class="info_box_3 hidden" data-order="6">
+              <h1>THE PHILOSOPHY</h1>
+              <p class="about_me">
+                <span class="" style="font-weight: 800;">
+                  There are 3 key philosophies I always keep in mind when working on a project of any caliber.
+                </span>
+              </p>
+            </div>
+
+            <div class="info_box_3">
+              <p class="about_me">
+                <li class="handwriting hidden" data-order="7">
+                  Never forget the small details. While the overall goal is always important, the small details give
+                  every project it's own identity.
+                </li>
+                <li class="handwriting hidden" data-order="8">
+                  Stay open-minded. Always be open to changing plans if things don't work out, and always be willing to
+                  hear other point of views.
+                </li>
+                <li class="handwriting hidden" data-order="9">
+                  Put 200% into every project. Whether or not the project is my own, or a commission for someone else,
+                  there is never a reason to not go all out on said project. I will always put my all into every project
+                  I undertake.
+                </li>
+              </p>
+            </div>
+
+            <div class="info_box_3 hidden" data-order="9">
+              <h1>THE SKILLS</h1>
+            </div>
+            <div class="info_box_3 hidden" data-order="10">
+              <div class="intro joined">
+                <h4 class="major">Languages and Technologies Learned:</h4>
+                <div id='current-tech'>
+                  <span>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+                      <img
+                        src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" />
+                    </a>
+                  </span>
+                  <span>
+                    <a href="https://www.mysql.com/">
+                      <img
+                        src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white" />
+                    </a>
+                  </span>
+                  <span>
+                    <a href="https://nodejs.org/">
+                      <img
+                        src="https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white">
+                    </a>
+                  </span>
+                  <span>
+                    <a href="https://reactjs.org/">
+                      <img
+                        src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
+                    </a>
+                  </span>
+                  <span>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
+                      <img
+                        src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" /></a>
+                  </span>
+                  <span>
+                    <a href="https://www.heroku.com/home">
+                      <img
+                        src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white" />
+                    </a>
+                  </span>
+                  <span>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+                      <img
+                        src="https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white" />
+                    </a>
+                  </span>
+                  <span>
+                    <a href="https://www.mongodb.com/">
+                      <img
+                        src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" />
+                    </a>
+                  </span>
+                  <span>
+                    <a href="https://www.npmjs.com/">
+                      <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white">
+                    </a>
+                  </span>
+                  <span>
+                    <a href="https://learn.microsoft.com/en-us/dotnet/csharp/">
+                      <img
+                        src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white">
+                    </a>
+                  </span>
+                  <span>
+                    <a href="https://www.python.org/">
+                      <img
+                        src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue" /></a>
+                  </span>
+                  <span>
+                    <a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5">
+                      <img
+                        src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+                    </a>
+                  </span>
+                  <span>
+                    <a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5">
+                      <img
+                        src="https://img.shields.io/badge/Express%20js-000000?style=for-the-badge&logo=express&logoColor=white" />
+                    </a>
+                  </span>
+                  <span>
+                    <a href="https://handlebarsjs.com/">
+                      <img
+                        src="https://img.shields.io/badge/Handlebars%20js-f0772b?style=for-the-badge&logo=handlebarsdotjs&logoColor=black" />
+                    </a>
+                  </span>
+                  <span>
+                    <a href="https://sequelize.org/">
+                      <img
+                        src="https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=Sequelize&logoColor=white" />
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="info_box_3">
+
+            </div>
+            <!-- <div class="img_ctn_1 hidden" data-order="7">
+              <img class="img-Edi" src="./assets/images/AfricanGarb.jpg" alt="a photo of Ediubong, in a thinking pose.">
+            </div>
+          </div> -->
+          </div>
+      </article>
+
+      <article class="section projects_sec" id="3">
+
+
+        <div class="select_slider" id="myDiv">
+
+          <button class="scroll_button" id="up">&#9650;</button>
+          <div class="scroll_container">
+            <div class="item" id="Noobz">
+              <h4>Noobz</h4>
+            </div>
+
+            <div class="item" id="Chronoscape">
+              <h4>Chronoscape</h4>
+            </div>
+
+            <div class="item" id="Showdown">
+              <h4>Showdown</h4>
+            </div>
+
+            <!-- <div class="item" id="Floral Tempus">
+              <h4>Floral Tempus</h4>
+            </div> -->
+
+            <!-- <div class="item" id="Artwork">
+              <h4>Artwork</h4>
+            </div>
+
+            <div class="item" id="HWY6 Studios">
+              <h4>HWY6 Studios</h4>
+            </div> -->
+
+          </div>
+          <button class="scroll_button" id="down">&#9660;</button>
+
+        </div>
+
+
+        <div class="project_ctn">
+
+          <div class="project_box">
+
+            <div class="img_ctn_2">
+              <img class="large_img" src="" alt="Large Image">
+              <div class="small_img_ctn">
+                <img class="small_img1 sI" src="" alt="Small Image 1">
+                <img class="small_img2 sI" src="" alt="Small Image 2">
+                <img class="small_img3 sI" src="" alt="Small Image 3">
+                <img class="small_img4 sI" src="" alt="Small Image 4">
+              </div>
+            </div>
+
+            <div class="project_info">
+              <div>
+                <h1 class="proj_name">Chronoscape</h1>
+              </div>
+              <div class="project-tech">
+                <span>
+                  <a href="#">
+                    <img src="" />
+                  </a>
+                </span>
+                <span>
+                  <a href="#">
+                    <img src="" />
+                  </a>
+                </span>
+                <span>
+                  <a href="#">
+                    <img src="" />
+                  </a>
+                </span>
+                <span>
+                  <a href="#">
+                    <img src="" />
+                  </a>
+                </span>
+                <span>
+                  <a href="#">
+                    <img src="" />
+                  </a>
+                </span>
+                <span>
+                  <a href="#">
+                    <img src="" />
+                  </a>
+                </span>
+              </div>
+
+              <div>
+                <h3 class="desc_title">Project Description:</h3>
+                <p class="project_text">
+                  <span class="handwriting">
+                    Chronoscape is a Handlebars.js and Express.js choose your own adventure game built with Node.js,
+                    Express.js, MySQL, and Sequelize. The game features a short but interesting story and has the user
+                    travel through very familiar locations.
+                    <br>
+                    <br>
+                    Chronoscape was the second project of my UTA Coding Bootcamp and challenged me and my fellow
+                    classmates to understand how to use handlebars.js and express.js to build a web application. We
+                    chose to build a choose your own adventure game because past students had failed to complete the
+                    project, and we took it upon ourselves to truly understand handlebars and implement it like never
+                    before.
+                  </span>
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </article>
+
+      <article class="section contacts_ctn" id="4">
+
+        <div class="contacts_sec_1">
+          <div class="contact_icons_2">
+            <div class="icon_list_2">
+              <li class="cIcon">
+                <a href="#">
+                  <i class="fa-brands fa-linkedin fa-lg"></i>
+                </a>
+                <h3>LinkedIn</h3>
+              </li>
+              <li class="cIcon">
+                <a href="#">
+                  <i class="fa-brands fa-github fa-lg"></i>
+                </a>
+                <h3>GitHub</h3>
+              </li>
+              <li class="cIcon">
+                <a href="#">
+                  <i class="fa-brands fa-x-twitter fa-lg"></i>
+                </a>
+                <h3>X / Twitter</h3>
+              </li>
+              <li class="cIcon">
+                <a href="#">
+                  <i class="fa-brands fa-instagram fa-lg"></i>
+                </a>
+                <h3>Instagram</h3>
+              </li>
+              <li class="cIcon">
+                <a href="#">
+                  <i class="fa-brands fa-discord fa-lg"></i>
+                </a>
+                <h3>Discord</h3>
+              </li>
+              <li class="cIcon">
+                <a href="#">
+                  <i class="fa-brands fa-tiktok fa-lg"></i>
+                </a>
+                <h3>TikTok</h3>
+              </li>
+              <li class="cIcon">
+                <a href="#">
+                  <i class="fa-brands fa-youtube fa-lg"></i>
+                </a>
+                <h3>YouTube</h3>
+              </li>
+              <li class="cIcon">
+                <a href="#">
+                  <i class="fa-regular fa-envelope fa-lg"></i>
+                </a>
+                <h3>Email</h3>
+              </li>
+            </div>
+          </div>
+
+          <div class="contact_form">
+
+            <form class="cInfo-box">
+                <div>
+                  <div class="name_box">
+                    <div>
+                      <h3>First Name</h3>
+                      <input class="name" type="text" placeholder="Name">
+                    </div>
+
+                    <div>
+                      <h3>Last Name</h3>
+                      <input class="name" type="text" placeholder="Name">
+                    </div>
+                  </div>
+
+                  <h3>Email</h3>
+                  <input class="email" type="text" placeholder="Email">
+                </div>
+
+                <div>
+                  <h3>Feedback / Commission</h3>
+                  <div>
+                    <textarea class="feedback" placeholder="Feedback"></textarea>
+                  </div>
+                </div>
+
+                <div class="submit_btn_ctn" id="">
+                  <a class="continue_btn" data-id="2">
+                    <span class="handwriting">Submit</span>
+                  </a>
+                </div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <article class="section" id="5">
+        <div class="glitch_wrapper">
+          <h2 class="glitch" data-text="COMING SOON...">COMING SOON...</h2>
+        </div>
+      </article>
+      <article class="section" id="6">
+        <h2>06</h2>
+      </article>
     </div>
   </main>
 
-  
 
-  
-
-  <ul class="navbar hidden">
-    <li><a class="nav_item" href="">FIGHT ME!</a></li>
-    <span>&#8226;</span>
-    <li><a class="nav_item" href="">FIGHT ME!</a></li>
-    <span>&#8226;</span>
-    <li><a class="nav_item" href="">FIGHT ME!</a></li>
-    <span>&#8226;</span>
-    <li><a class="nav_item" href="">FIGHT ME!</a></li>
-  </ul>
+  <!-- MENU _____________________ -->
 
 
+  <!-- <header class="large">
+      <div class="container">
+        <nav>
+          <a><div class="logo"></div></a>
+            <ul>
+              <li><a href="#a">01</a></li>
+              <li><a href="#b">02</a></li>
+              <li><a href="#c">03</a></li>
+              <li><a href="#d">04</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header> -->
+
+  <script src="https://cdn.jsdelivr.net/npm/universalsmoothscroll@latest/universalsmoothscroll-min.js">
+  </script>
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
     crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
   <script src="./assets/js/script.js"></script>
 </body>
+
+</html>
+
 
 </html>
