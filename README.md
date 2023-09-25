@@ -1,7 +1,8 @@
 # Portfolio
 
 Juno and Ice's Main Portfolio
-
+https://junoandice.github.io/Portfolio/
+(NO MOBILE FUNCTIONALITY AS OF 9-25)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
   
 ## Description
