@@ -1,5 +1,5 @@
 * {
-  --font-poppins: 'Poppins', 'sans-seriff';
+  --font-poppins: 'Poppins', 'sans-serif';
   --font-sunrise: 'Waiting for the Sunrise', cursive;
 }
 
@@ -7,7 +7,7 @@
   font-family: var(--font-sunrise);
 }
 
-.noselect {
+.no_select {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
      -khtml-user-select: none; /* Konqueror HTML */
@@ -52,12 +52,13 @@ body {
 }
 
 .section {
-  flex-shrink: 0; /* ADDED insted of the width/height of the wrapper */
+  flex-shrink: 0; /* ADDED instead of the width/height of the wrapper */
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 50px;
 }
 
 /* #a { background-color: #ccc; } */
@@ -66,12 +67,6 @@ body {
 /* #d { background-color: #fff; } */
 /* #e { background-color: #ccc; } */
 /* #f { background-color: #fff; } */
-
-h2 {
-  text-align: center;
-  font-size: 200px;
-  margin: 0;
-}
 
 /* NAVBAR AND HEADER  */
 header {
@@ -92,7 +87,7 @@ header {
 .container {
   display: inline-block;
   cursor: pointer;
-  flex: 0 0 33%;
+  /* flex: 0 0 33%; */
 }
 
 .bar1, .bar2, .bar3 {
@@ -114,7 +109,7 @@ header {
 }
 
 .commission_btn_ctn {
-  flex: 0 0 33%;
+  /* flex: 0 0 33%; */
   text-align: right;  
 }
 
@@ -132,8 +127,8 @@ header {
   display: flex;
   /* justify-content: center; */
   /* align-items: center; */
-  flex: 1 1 auto;
   /* transform: scale(1.875); */
+  margin: auto;
 }
 
 .inline-block {
@@ -143,11 +138,13 @@ header {
 .navbar {
   text-align: left;
   list-style-type: none;
+  display: flex;
+  justify-content: space-between;
 }
 
 .navbar li{
   margin-right: 30px;
-  display: none;
+  opacity: 0;
 }
 
 .nav_item {
@@ -165,6 +162,25 @@ header {
 
 
 /* SECTION 1: HOME  */
+
+.main_img {
+  z-index: -1;
+  /* position: absolute;
+  right: 0;
+  bottom: 0; */
+  width: 300px;
+  margin: auto;
+  height: 200px;
+  filter: grayscale(100%) brightness(30%);
+  display: flex;
+  gap: 40px;
+}
+
+#background_img {
+  width: 100%;
+  height: 100%;
+}
+
 .intro_txt,
 .body_text {
   font-size: 40px;
@@ -253,8 +269,8 @@ i {
               -0.055em -0.05em 0 rgba(0, 242, 234,0.75);
 }
 
-/* SECTION 2: ABOUT ME */
 
+/* SECTION 2: ABOUT ME */
 
 .about_me_ctn {
   display: flex;
@@ -279,8 +295,8 @@ i {
 .about_me_sec-2 {
   margin: auto;
   display: flex;
-  /* justify-content: center; */
-  /* align-items: center; */
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -328,8 +344,22 @@ text-align: center;
 
 #current-tech{
 	display: flex;
-	align-content: center;
-  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+	align-content: space-around;
+  gap: 10px;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* align-content: space-around; */
+  /* gap: 10px; */
+  width: 75%;
+}
+.project-tech > span > a {
+  text-decoration: none;
 }
 
 @keyframes blink {
@@ -338,25 +368,247 @@ text-align: center;
   100% { opacity: 1; }
 }
 
+
+
+/* #current-tech > span > a {
+  -moz-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+  -ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+  color: inherit;
+  border-bottom: solid 1px;
+  text-decoration: none;
+}
+
+#current-tech > span > a:hover {
+    border-bottom-color: transparent;
+    color: #ffe4b4;
+  } */
+
+
+/* PROJECTS SECTION  */
+
+.projects_sec {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: center;
+  gap: 50px;
+}
+
+.select_slider {
+  margin-left: 50px;
+}
+
+.scroll_button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1em; /* Adjust size as needed */
+  cursor: pointer;
+}
+
+.select_slider{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px
+}
+
+#myDiv {
+  overflow: hidden;
+  height: 250px; /* Adjust this value according to your needs */
+}
+
+.scroll_container {
+  overflow-y: auto;
+  scrollbar-width: none; /* For Firefox */
+}
+
+.scroll_container::-webkit-scrollbar { 
+  display: none; /* For Chrome, Safari and Opera */
+}
+
+.item {
+  filter: brightness(50%);
+  transition: filter 0.5s ease;
+  cursor: pointer;
+}
+
+.item:hover,
+.item.clicked {
+  filter: brightness(100%);
+}
+
+
+.project_ctn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.project_box {
+  display: flex;
+  flex-direction: row;
+  gap: 20px
+}
+
+.img_ctn_2 {
+  width: 1080px;
+  height: 700px;
+  display: flex;
+  flex-direction: column; /* This will stack the large image and the small images container vertically */
+  transition: all .3s ease-in-out;
+}
+
+.small_img_ctn {
+  display: flex; /* This will line up the small images in a row */
+  justify-content: space-between;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.large_img {
+  width: 100%;
+  height: 100%;
+  filter: grayscale(85%) brightness(50%); /* Make the image grayscale and darken */
+  transition: filter 0.5s ease, transform 0.5s ease; /* Transition effect for the filter and transform */
+}
+
+.large_img:hover {
+  filter: grayscale(0%) brightness(100%); /* Full color on hover */
+  transform: scale(1.01); /* Slightly increase size on hover */
+  z-index: 1;
+}
+
+.sI {
+  width: calc(33.33% - 10px); /* This will divide the width evenly among the small images, subtracting a little for margins */
+  /* margin: 5px; */
+  filter: grayscale(85%) brightness(50%); /* Make the image grayscale and darken */
+  transition: filter 0.5s ease, transform 0.5s ease; /* Transition effect for the filter and transform */
+}
+
+.sI:hover {
+  filter: grayscale(0%) brightness(100%); /* Full color on hover */
+  transform: scale(1.03); /* Slightly increase size on hover */
+  z-index: 1;
+}
+
+.project_box {
+  /* margin: auto; */
+}
+
+.project_info {
+  display: flex;
+  flex-direction: column;
+}
+
+.project_text {
+  width: 400px;
+  font-size: 20px;
+}
+
+/* CONTACTS SECTION  */
+
+.contacts_ctn {
+  display: flex;
+  justify-content: space-around;
+}
+
+.contacts_sec_1 {
+  display: flex;
+  align-items: center;
+  
+  gap: 600px;
+  /* padding: 50px; */
+
+}
+
+.icon_list_2 {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.cIcon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 50px;
+  height: 60px;
+}
+
+.cInfo-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.name_box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.name,
+.email,
+.feedback {
+  border-radius: 3px;
+  padding: 5px;
+  background: transparent;
+  color: white;
+  resize: none;
+}
+
+.name {
+  width: 150px;
+  height: 25px;
+}
+
+.email {
+  width: 350px;
+  height: 25px;
+}
+
+.feedback {
+  height: 100px;
+  width: 350px;
+}
+
 /* GLITCH EFFECT. */
 .glitch-wrapper {
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* text-align: center; */
 }
 
-.glitch:before,
-.glitch:after {
-   display: block;
-   content: attr(data-text);
-   position: absolute;
-   top: 310px;
-   left: 10;
-   opacity: 0.8;
+.glitch {
+  font-size: 50px;
 }
+
+.glitch:before {
+  display: block;
+  content: attr(data-text);
+  position: relative;
+  top: 75px;
+  opacity: 0.8;
+  width: 100%;
+}
+
+.glitch:after {
+  display: block;
+  content: attr(data-text);
+  position: relative;
+  bottom: 75px;
+  opacity: 0.8;
+  width: 100%;
+}
+
 
 .glitch:before {
    animation: glitch-it 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
