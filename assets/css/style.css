@@ -465,7 +465,7 @@ text-align: center;
 .small_img_ctn {
   display: flex; /* This will line up the small images in a row */
   justify-content: space-between;
-  gap: 5px;
+  /* gap: 5px; */
   margin-top: 5px;
 }
 
@@ -483,7 +483,7 @@ text-align: center;
 }
 
 .sI {
-  width: calc(33.33% - 10px); /* This will divide the width evenly among the small images, subtracting a little for margins */
+  width: calc(25% - 5px); /* This will divide the width evenly among the small images, subtracting a little for margins */
   /* margin: 5px; */
   filter: grayscale(85%) brightness(50%); /* Make the image grayscale and darken */
   transition: filter 0.5s ease, transform 0.5s ease; /* Transition effect for the filter and transform */
