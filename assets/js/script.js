@@ -136,25 +136,51 @@ const animateElement = (element, className, index, callback) => {
 };
 
 const loadMoreInfo = (className, buttonDivId) => {
-  $("#" + buttonDivId).hide();
+  const deviceType = getDeviceType();
+  console.log(deviceType);
+
   const elements = $("." + className).sort((a, b) => {
     return $(a).data('order') - $(b).data('order');
   });
 
-  if (elements.length > 0) {
-    const animateNextElement = (index) => {
-      if (index < elements.length) {
-        animateElement(elements[index], className, index, () => {
-          setTimeout(() => {
-            animateNextElement(index + 1);
-          }, 100); // Adjust the delay as needed for seamless animation
-        });
-      }
-    };
+  switch (deviceType) {
+    case 'desktop':
+      $("#" + buttonDivId).hide();
+      
 
-    animateNextElement(0); // Start animation for the first element
-  }
-};
+      if (elements.length > 0) {
+        const animateNextElement = (index) => {
+          if (index < elements.length) {
+            animateElement(elements[index], className, index, () => {
+              setTimeout(() => {
+                animateNextElement(index + 1);
+              }, 100); // Adjust the delay as needed for seamless animation
+            });
+          }
+        };
+
+        animateNextElement(0); // Start animation for the first element
+      }
+      break;
+    case 'mobile':
+      $("#" + buttonDivId).hide();
+      // $('.about_me_sec-2').addClass('active');
+      if (elements.length > 0) {
+        const animateNextElement = (index) => {
+          if (index < elements.length) {
+            animateElement(elements[index], className, index, () => {
+              setTimeout(() => {
+                animateNextElement(index + 1);
+              }, 100); // Adjust the delay as needed for seamless animation
+            });
+          }
+        };
+
+        animateNextElement(0); // Start animation for the first element
+      }
+      break;
+    };
+  };
 
 
 // Reusable function to change image source
@@ -237,6 +263,7 @@ function setupProject(project) {
     $('.item').removeClass('clicked');
     $(selector).addClass('clicked');
     updateUI();
+    localStorage.setItem('id', id);
     lastClickedImagePath = largeImagePath;
     lastClickedSmallImagePaths = smallImagePaths;
     lastClickedProject = id;
@@ -253,7 +280,8 @@ $(document).ready(function () {
   });
 
   // Automatically click the first project
-  $('#Chronoscape').click();
+  const lasClickedProject = localStorage.getItem('id');
+  $(`#${lasClickedProject}`).click();
 });
 
 $(document).ready(function() {
@@ -269,28 +297,139 @@ $(document).ready(function() {
 });
 
 
-$(document).ready(function() {
-  let container = $('.scroll_container');
-  let scrollAmount = 400; // Change this to the amount you want to scroll
-  let scrollSpeed = 800; // Change this to control the speed of the scroll
+// $(document).ready(function() {
+//   let container = $('.scroll_container');
+//   let scrollAmount = 400; // Change this to the amount you want to scroll
+//   let scrollSpeed = 800; // Change this to control the speed of the scroll
 
-  $('#up').mousedown(function() {
-      container.animate({
-          scrollTop: '-=' + scrollAmount
-      }, scrollSpeed);
-  });
+//   $('#up').mousedown(function() {
+//       container.animate({
+//           scrollTop: '-=' + scrollAmount
+//       }, scrollSpeed);
+//   });
 
-  $('#down').mousedown(function() {
-      container.animate({
-          scrollTop: '+=' + scrollAmount
-      }, scrollSpeed);
-  });
+//   $('#down').mousedown(function() {
+//       container.animate({
+//           scrollTop: '+=' + scrollAmount
+//       }, scrollSpeed);
+//   });
 
-  // Stop the animation when the mouseup event is triggered
-  $('#up, #down').mouseup(function() {
-      container.stop();
+//   // Stop the animation when the mouseup event is triggered
+//   $('#up, #down').mouseup(function() {
+//       container.stop();
+//   });
+// });
+
+$(function() {
+  const deviceType = getDeviceType();
+
+  switch (deviceType) {
+    case 'desktop':
+      var gallery = $('#gallery-container'),
+      items = gallery.find('li'),
+      len = items.length,
+      current = 1,  /* the current item we're looking */
+
+      first = items.filter(':first-child'),
+      second = items.filter((index) => index == 1),
+      last = items.filter(':last-child'),
+      secondlast = items.filter((index) => index == items.length - 2),
+
+      triggers = $('button');
+
+  /* 1. Cloning first and last items */
+  first.before(secondlast.clone(true));
+  first.before(last.clone(true));
+  last.after(second.clone(true));
+  last.after(first.clone(true));
+
+  /* 2. Set button handlers */
+  triggers.on('click', function() {
+
+    if (gallery.is(':not(:animated)')) {
+
+      var cycle = false,
+          delta = (this.id === "prev") ? -1 : 1;
+          /* in the example buttons have id "prev" or "next" */
+
+      gallery.animate({ top: "+=" + (-100 * delta) }, function() {
+
+        current += delta;
+
+        /**
+         * we're cycling the slider when the value of "current" 
+         * variable (after increment/decrement) is 0 or when it exceeds
+         * the initial gallery length
+         */
+        cycle = !!(current === 0 || current > len);
+
+        if (cycle) {
+          /* we switched from image 1 to 4-cloned or 
+             from image 4 to 1-cloned */
+          current = (current === 0) ? len : 1;
+          gallery.css({ top: -100 * (current - 1) });
+        }
+      });
+    }
+
   });
+      break;
+    case'mobile':
+    var gallery = $('#gallery ul'),
+      items   = gallery.find('li'),
+      len     = items.length,
+      current = 1,  /* the current item we're looking */
+      
+      first   = items.filter(':first-child'),
+      second  = items.filter((index)=>index==1),
+      last    = items.filter(':last-child'),
+      secondlast = items.filter((index)=>index==items.length-2),
+      
+      triggers = $('button');
+   
+
+  
+  /* 1. Cloning first and last items */
+  first.before(secondlast.clone(true)); 
+  first.before(last.clone(true)); 
+  last.after(second.clone(true)); 
+  last.after(first.clone(true)); 
+  
+  /* 2. Set button handlers */
+  triggers.on('click', function() {
+    
+    if (gallery.is(':not(:animated)')) {
+     
+        var cycle = false,
+            delta = (this.id === "prev")? -1 : 1;
+            /* in the example buttons have id "prev" or "next" */  
+    
+        gallery.animate({ left: "+=" + (-100 * delta) }, function() {
+      
+            current += delta;
+       
+            /** 
+             * we're cycling the slider when the the value of "current" 
+             * variable (after increment/decrement) is 0 or when it exceeds
+             * the initial gallery length
+             */          
+            cycle = !!(current === 0 || current > len );
+       
+            if (cycle) {
+                /* we switched from image 1 to 4-cloned or 
+                   from image 4 to 1-cloned */
+                current = (current === 0)? len : 1; 
+                gallery.css({left:  -100 * (current + 1) });
+            }
+        });   
+     }
+    
+  });
+    break;
+  }
+  
 });
+
 
 $(document).ready(function() {
   const words = ["Creative", "Innovator", "Designer", "Developer"]; // words to be typed
@@ -357,8 +496,8 @@ const strategies = {
   'mobile': (wrapper) => {
     wrapper.addEventListener('touchmove', (event) => {
       event.preventDefault();
-      let moveX = startX - e.touches[0].clientX;
-      uss.scrollXBy(moveX, wrapper, null, false);
+      let moveY = startY - e.touches[0].clientY;
+      uss.scrollYBy(moveY, wrapper, null, false);
     }, { passive: false });
   },
   'tablet': (wrapper) => {
@@ -397,17 +536,39 @@ const init = () => {
 
 
 const openMenu = (event) => {
-  event.classList.toggle("change");
-  const listItems = $(".navbar li");
-  const hasChangeClass = event.classList.contains("change");
+  const deviceType = getDeviceType();
+  
+  switch  (deviceType) {
+    case "desktop": 
+    event.classList.toggle("change");
+    const listItems = $(".navbar li");
+    const hasChangeClass = event.classList.contains("change");
+  
+    listItems.each(function (i) {
+      const startOpacity = hasChangeClass ? 0 : 1;
+      const endOpacity = hasChangeClass ? 1 : 0;
+      const pointerEvents = hasChangeClass ? 'auto' : 'none';
+  
+      $(this).css('opacity', startOpacity)
+        .css('pointer-events', pointerEvents)
+        .animate({ opacity: endOpacity }, 500);
+    });
+    break;
 
-  listItems.each(function (i) {
-    const startOpacity = hasChangeClass ? 0 : 1;
-    const endOpacity = hasChangeClass ? 1 : 0;
-    const pointerEvents = hasChangeClass ? 'auto' : 'none';
-
-    $(this).css('opacity', startOpacity)
-      .css('pointer-events', pointerEvents)
-      .animate({ opacity: endOpacity }, 500);
-  });
-};
+    case "mobile": 
+    event.classList.toggle("change");
+    const listItems2 = $(".navbar li");
+    const hasChangeClass2 = event.classList.contains("change");
+  
+    listItems2.each(function (i) {
+      const startOpacity = hasChangeClass2 ? 0 : 1;
+      const endOpacity = hasChangeClass2 ? 1 : 0;
+      const pointerEvents = hasChangeClass2 ? 'auto' : 'none';
+  
+      $(this).css('opacity', startOpacity)
+        .css('pointer-events', pointerEvents)
+        .animate({ opacity: endOpacity }, 500);
+    });
+    break;
+  };
+}

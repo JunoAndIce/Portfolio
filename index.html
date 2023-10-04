@@ -52,40 +52,43 @@
     <div class="wrapper">
       <article class="section" id="1">
 
+        <div class="mobile_img_ctn">
+          <img id="mobile_img" src="./assets/images/me/AfricanGarb.jpg"></img>
+          <fade/>
+        </div>
+        
+
         <div class="home_text">
           <div class="">
             <span class="handwriting intro_txt">Hello! I am:</span>
           </div>
 
           <div class="no_select">
-            <span class="body_title" data-text="JUNO AND ICE">JUNO AND ICE</span>
+            <span class="body_title" data-text="juno and ice">JUNO AND ICE</span>
           </div>
 
           <div class="body_text">
-            <span class="handwriting">A Portfolio by Ediubong Ekwere</span>
+            <span class="handwriting subt">A Portfolio by Ediubong Ekwere</span>
           </div>
 
           <div class="no_select body_title_clear">
             <span>JUNO AND ICE</span>
           </div>
+
+          <div class="contact_icons">
+            <div class="icon_list">
+              <li class="icon"><a href="#"><i class="fa-brands fa-linkedin fa-lg"></i></a></li>
+              <li class="icon"><a href="#"><i class="fa-brands fa-github fa-lg"></i></a></li>
+              <li class="icon"><a href="#"><i class="fa-brands fa-x-twitter fa-lg"></i></a></li>
+              <li class="icon"><a href="#"><i class="fa-brands fa-instagram fa-lg"></i></a></li>
+              <li class="icon"><a href="#"><i class="fa-brands fa-discord fa-lg"></i></a></li>
+              <li class="icon"><a href="#"><i class="fa-brands fa-tiktok fa-lg"></i></a></li>
+              <li class="icon"><a href="#"><i class="fa-brands fa-youtube fa-lg"></i></a></li>
+              <li class="icon"><a href="#"><i class="fa-regular fa-envelope fa-lg"></i></a></li>
+            </div>
+          </div>
         </div>
 
-        <div class="contact_icons">
-          <ul class="icon_list">
-            <li class="icon"><a href="#"><i class="fa-brands fa-linkedin fa-lg"></i></a></li>
-            <li class="icon"><a href="#"><i class="fa-brands fa-github fa-lg"></i></a></li>
-            <li class="icon"><a href="#"><i class="fa-brands fa-x-twitter fa-lg"></i></a></li>
-            <li class="icon"><a href="#"><i class="fa-brands fa-instagram fa-lg"></i></a></li>
-            <li class="icon"><a href="#"><i class="fa-brands fa-discord fa-lg"></i></a></li>
-            <li class="icon"><a href="#"><i class="fa-brands fa-tiktok fa-lg"></i></a></li>
-            <li class="icon"><a href="#"><i class="fa-brands fa-youtube fa-lg"></i></a></li>
-            <li class="icon"><a href="#"><i class="fa-regular fa-envelope fa-lg"></i></a></li>
-          </ul>
-        </div>
-
-        <!-- <div class="main_img">
-          <img id="background_img" src="./assets/images/Me/AfricanGarb.jpg"></img>
-        </div> -->
 
       </article>
 
@@ -96,8 +99,10 @@
             <div class="info_box hidden" data-order="1">
               <h1>THE INTRO</h1>
               <p class="about_me">
+                <span class="handwriting">Hi!</span>
+                <br>
                 <span class="handwriting">
-                  Hi! I'm Ediubong Ekwere and my art name is Juno and Ice.<br>Born in Houston, Texas, I am a 24 year-old
+                  I'm Ediubong Ekwere and my art name is Juno and Ice.<br>Born in Houston, Texas, I am a 24 year-old
                   freelance artist, full-stack web developer, and game developer.
                 </span>
               </p>
@@ -129,7 +134,7 @@
           </div>
         </div>
 
-        <div class="about_me_sec-2">
+        <div class="about_me_sec-2 active">
           <div class="info_box_2">
             <div>
               <h1>WHO IS JUNO AND ICE?</h1>
@@ -158,7 +163,7 @@
               <h1>THE PHILOSOPHY</h1>
               <p class="about_me">
                 <span class="" style="font-weight: 800;">
-                  There are 3 key philosophies I always keep in mind when working on a project of any caliber.
+                  There are 3 key philosophies I always uphold when I undertake any project.
                 </span>
               </p>
             </div>
@@ -294,36 +299,25 @@
 
         <div class="select_slider" id="myDiv">
 
-          <button class="scroll_button" id="up">&#9650;</button>
-          <div class="scroll_container">
-            <div class="item" id="Noobz">
-              <h4>Noobz</h4>
-            </div>
-
-            <div class="item" id="Chronoscape">
-              <h4>Chronoscape</h4>
-            </div>
-
-            <div class="item" id="Showdown">
-              <h4>Showdown</h4>
-            </div>
-
-            <!-- <div class="item" id="Floral Tempus">
-              <h4>Floral Tempus</h4>
-            </div> -->
-
-            <!-- <div class="item" id="Artwork">
-              <h4>Artwork</h4>
-            </div>
-
-            <div class="item" id="HWY6 Studios">
-              <h4>HWY6 Studios</h4>
-            </div> -->
-
+          <button type="button" class="scroll_button" id="prev">&#9650;</button>
+          <div id="gallery"> <!-- mask -->
+            <ul id="gallery-container">  <!-- container -->
+              <li class="item" id="Chronoscape">
+                <h4>Chronoscape</h4>
+              </li>
+              <li class="item" id="Showdown">
+                <h4>Showdown</h4>
+              </li>
+              <li class="item" id="Noobz">
+                <h4>Noobz</h4>
+              </li>
+            </ul>    
           </div>
-          <button class="scroll_button" id="down">&#9660;</button>
 
+        <button type="button" class="scroll_button" id="next">&#9660;</button>
         </div>
+
+        
 
 
         <div class="project_ctn">
@@ -340,8 +334,12 @@
               </div>
             </div>
 
+            <div class="active">
+              <h1 class="proj_name">Chronoscape</h1>
+            </div>
+            
             <div class="project_info">
-              <div>
+              <div class="hideMobile">
                 <h1 class="proj_name">Chronoscape</h1>
               </div>
               <div class="project-tech">
@@ -377,7 +375,7 @@
                 </span>
               </div>
 
-              <div>
+              <div class="project_info_box">
                 <h3 class="desc_title">Project Description:</h3>
                 <p class="project_text">
                   <span class="handwriting">

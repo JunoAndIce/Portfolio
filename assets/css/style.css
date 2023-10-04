@@ -109,8 +109,7 @@ header {
 }
 
 .commission_btn_ctn {
-  /* flex: 0 0 33%; */
-  text-align: right;  
+  /* flex: 0 0 33%; */ 
 }
 
 .commission_btn {
@@ -163,17 +162,8 @@ header {
 
 /* SECTION 1: HOME  */
 
-.main_img {
-  z-index: -1;
-  /* position: absolute;
-  right: 0;
-  bottom: 0; */
-  width: 300px;
-  margin: auto;
-  height: 200px;
-  filter: grayscale(100%) brightness(30%);
-  display: flex;
-  gap: 40px;
+.mobile_img_ctn {
+display: none;
 }
 
 #background_img {
@@ -211,23 +201,15 @@ header {
 }
 
 .contact_icons {
-  height: 7rem;
   position: absolute;
   bottom: 0;
   left: 0;
-  width: -moz-available;
-  width: -webkit-fill-available;
-  width: fill-available;
-  padding: 0 4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .icon_list {
   display: flex;
   gap: 50px;
-  padding: 0;
+  padding: 10px;
   list-style-type: none;
 }
 
@@ -276,8 +258,7 @@ i {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  
-  position: relative;
+  margin-left: 0;
 }
 
 .about_me {
@@ -286,17 +267,22 @@ i {
 }
 
 /* top | right | bottom | left */
-.about_me_box {
-  margin: 100px 0px 0 60px;
+.about_me_box,
+.about_me_box-2 {
+  padding: 20px;
   display: flex;
   flex-direction: column;
 }
 
-.about_me_sec-2 {
+
+.about_me_sec-1,
+.about_me_sec-2,
+.about_me_sec-3 {
   margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+
+.about_me_sec-2 {
+  display: block !important;
 }
 
 
@@ -324,12 +310,6 @@ text-align: center;
   color: black;
 }
 
-.about_me_box-2 {
-  margin: 100px 60px 0 0;
-  display: flex;
-  flex-direction: column;
-}
-
 .img-Edi {
   width: 350px;
 }
@@ -345,22 +325,11 @@ text-align: center;
 #current-tech{
 	display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-	align-content: space-around;
+  justify-content: center;
   gap: 10px;
 }
 
-.project-tech {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  /* align-content: space-around; */
-  /* gap: 10px; */
-  width: 75%;
-}
-.project-tech > span > a {
-  text-decoration: none;
-}
+
 
 @keyframes blink {
   0% { opacity: 1; }
@@ -389,15 +358,10 @@ text-align: center;
 /* PROJECTS SECTION  */
 
 .projects_sec {
-  display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-self: center;
+  align-items: center;
   gap: 50px;
-}
-
-.select_slider {
-  margin-left: 50px;
 }
 
 .scroll_button {
@@ -410,23 +374,36 @@ text-align: center;
 
 .select_slider{
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px
+  gap: 10px;
 }
 
-#myDiv {
-  overflow: hidden;
-  height: 250px; /* Adjust this value according to your needs */
+#gallery {
+  position: relative;
+  text-align: center;
+  width: 120px;
+  height: 300px; /* Adjust the height to fit your needs */
+  /* usually an «overflow:hidden» is set here */
 }
 
-.scroll_container {
-  overflow-y: auto;
-  scrollbar-width: none; /* For Firefox */
+#gallery { 
+  overflow: hidden; 
 }
 
-.scroll_container::-webkit-scrollbar { 
-  display: none; /* For Chrome, Safari and Opera */
+#gallery-container {
+  display: flex;
+  flex-direction: column; /* Vertical layout */
+  position: absolute;
+  list-style: none;
+  top: 0;
+  left: 0; /* Adjust the left position as needed */
+  margin: 0;
+  padding: 0;
+}
+
+#gallery-container li {
+  width: 100%;
+  height: 100%;
+  padding: 2px;
 }
 
 .item {
@@ -498,6 +475,23 @@ text-align: center;
 .project_box {
   /* margin: auto; */
 }
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* align-content: space-around; */
+  gap: 10px;
+  width: 80%;
+}
+.project-tech > span > a {
+  text-decoration: none;
+}
+
+.active {
+  display: none;
+}
+
 
 .project_info {
   display: flex;
@@ -641,4 +635,417 @@ text-align: center;
    to {
       transform: translate(0);
    }
+}
+
+
+
+  /* MOBILE  */
+
+  @media screen and (max-width: 480px) {
+    .outer-wrapper {
+      box-sizing: border-box;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      position: absolute;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .wrapper {
+      flex-direction: column;
+
+    }
+
+/* SECTION 1: HOME  */
+.section {
+  margin-left: 0px;
+}
+
+    .body_title {
+      font-size: 50px;
+      font-weight: 800;
+      pointer-events: none;
+      /* text-shadow: 0.03em 0.02em 0 rgb(151, 109, 243),
+                  -0.035em -0.02em 0 rgb(113, 218, 244); */
+    }
+
+    .icon_list {
+      display: flex;
+      gap: 20px;
+      list-style-type: none;
+    }
+
+    .mobile_img_ctn {
+      position: absolute;
+      top: 0;
+      z-index: -5;
+      height: 350px;
+      width: 100vw;
+      display: block;
+    }
+
+    #mobile_img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .home_text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 200px;
+    }
+
+    .intro_txt {
+      font-size: 32px;
+    }
+
+    .body_text {
+      font-size: 24px;
+    }
+
+    fade {
+      position: relative;
+      bottom: 50px;
+    
+      display: block;
+    
+      width: 100%;
+      height: 50px;
+    
+      background-image: linear-gradient(to bottom, 
+          rgba(255, 255, 255, 0), 
+          #101010
+      100%);
+    }
+
+    .body_title_clear {
+      position: fixed;
+      bottom: 10%;
+      right: 0%;
+      z-index: 2;
+      pointer-events: none;
+    }
+    
+    .body_title_clear span {
+      font-size: 150px;
+      font-weight: 800;
+      -webkit-text-stroke: 1px #DDDDDD20;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .contact_icons {
+      left: auto;
+      bottom: 50px;
+    }
+
+
+    /* ABOUT ME  */
+    .about_me_ctn {
+      flex-direction: column;
+      text-align: center;
+      height: 100%;
+      width: 100%;
+      
+    }
+    
+ 
+    
+    /* top | right | bottom | left */
+    .about_me {
+      font-size: 16px;
+      width: 100%;
+    }
+    
+    .about_me_box > div > h1 {
+      text-align: center;
+    }
+    
+    .about_me_sec-2 > div > h1 {
+      font-size: 35px;
+    }
+    
+
+    #current-tech{
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    .active {
+      order: -1;
+      display: block;
+    }
+
+    .hidden {
+      opacity: 1;
+    }
+
+    .continue_btn_ctn {
+      display: none;
+    }
+
+    #gallery {
+      position: relative;
+      text-align: center;
+      width: 300px;
+      height: 70px; /* Adjust the height to fit your needs */
+      /* usually an «overflow:hidden» is set here */
+    }
+    
+    #gallery-container {
+      display: flex;
+      flex-direction: row; /* Vertical layout */
+      position: absolute;
+      list-style: none;
+      gap: 20px;
+      top: 0;
+      left: 0; /* Adjust the left position as needed */
+      margin: 0;
+      padding: 0;
+    }
+
+    #gallery-container li {
+      width: 100%;
+      height: 100%;
+      padding: 2px;
+    }
+
+    .select_slider{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+ /* PROJECTS SECTION  */
+  .projects_sec {
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+    width: 100vw;
+  }
+
+  
+  .scroll_button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1em; /* Adjust size as needed */
+    cursor: pointer;
+  }
+
+  .hideMobile {
+    display: none;
+  }
+  
+  #gallery {
+    position: relative;
+    text-align: center;
+    width: 300px;
+    height: 70px; /* Adjust the height to fit your needs */
+    /* usually an «overflow:hidden» is set here */
+  }
+  
+  #gallery-container {
+    display: flex;
+    flex-direction: row; /* Vertical layout */
+    position: absolute;
+    list-style: none;
+    gap: 20px;
+    top: 0;
+    left: 0; /* Adjust the left position as needed */
+    margin: 0;
+    padding: 0;
+  }
+
+  #gallery-container li {
+    width: 100%;
+    height: 100%;
+    padding: 2px;
+  }
+
+  .select_slider{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  #myDiv {
+    overflow: hidden;
+    height: 50%; /* Adjust this value according to your needs */
+  }
+  
+  .scroll_container::-webkit-scrollbar { 
+    display: none; /* For Chrome, Safari and Opera */
+  }
+  
+  .item {
+    filter: brightness(50%);
+    transition: filter 0.5s ease;
+    cursor: pointer;
+  }
+  
+  .item:hover,
+  .item.clicked {
+    filter: brightness(100%);
+  }
+  
+  
+  .project_ctn {
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .project_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px
+  }
+  
+  .img_ctn_2 {
+    width: 90%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* This will stack the large image and the small images container vertically */
+    transition: all .3s ease-in-out;
+  }
+  
+  .small_img_ctn {
+    display: flex; /* This will line up the small images in a row */
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* gap: 5px; */
+  }
+  
+  .large_img {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(85%) brightness(50%); /* Make the image grayscale and darken */
+    transition: filter 0.5s ease, transform 0.5s ease; /* Transition effect for the filter and transform */
+  }
+  
+  .large_img:hover {
+    filter: grayscale(0%) brightness(100%); /* Full color on hover */
+    transform: scale(1.01); /* Slightly increase size on hover */
+    z-index: 1;
+  }
+  
+  .sI {
+    width: calc(50% - 5px); /* This will divide the width evenly among the small images, subtracting a little for margins */
+    /* margin: 5px; */
+    padding-top: 10px;
+    filter: grayscale(85%) brightness(50%); /* Make the image grayscale and darken */
+    transition: filter 0.5s ease, transform 0.5s ease; /* Transition effect for the filter and transform */
+  }
+  
+  .sI:hover {
+    filter: grayscale(0%) brightness(100%); /* Full color on hover */
+    transform: scale(1.03); /* Slightly increase size on hover */
+    z-index: 1;
+  }
+  
+  .project_box {
+    /* margin: auto; */
+  }
+  
+  .project_info {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+  
+  .project_text {
+    font-size: 18px;
+    width: 100%;
+  }
+
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  /* CONTACTS SECTION  */
+
+.contacts_ctn {
+  display: flex;
+  margin: 0  auto;
+  width: 90%;
+}
+
+.contacts_sec_1 {
+  flex-direction: column;
+  gap: 0;
+  /* padding: 50px; */
+
+}
+
+.icon_list_2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  list-style: none;
+  margin: auto;
+}
+
+.cIcon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 50px;
+  height: 60px;
+  width: 50%;
+}
+
+.cInfo-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.name_box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.name,
+.email,
+.feedback {
+  border-radius: 3px;
+  padding: 5px;
+  background: transparent;
+  color: white;
+  resize: none;
+}
+
+.name {
+  width: 150px;
+  height: 25px;
+}
+
+.email {
+  width: 350px;
+  height: 25px;
+}
+
+.feedback {
+  height: 100px;
+  width: 350px;
+}
 }
