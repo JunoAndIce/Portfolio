@@ -479,10 +479,31 @@ $(document).ready(function() {
   let typing = setInterval(type, 50);
 });
 
+$(document).ready(function () {
+  const leftButton = $("#prev");
+  const rightButton = $("#next");
+  const deviceType = getDeviceType();
 
+  switch (deviceType) {
+    case 'desktop':
+      leftButton[0].innerHTML = '&#9660';
+      rightButton[0].innerHTML = '&#9650';
+      break;
+    case 'mobile':
+      leftButton[0].innerHTML = '&#9664';
+      rightButton[0].innerHTML = '&#9654';
+      break;
+  }
+});
 
 const goToPage = (page) => {
+  $(".wrapper article").show();
   document.getElementById(page).scrollIntoView({behavior: 'smooth'});
+
+  const menuButton = document.querySelector('.container');
+    if (menuButton.classList.contains('change')) {
+      openMenu(menuButton);
+    }
 }
 
 const strategies = {
@@ -494,11 +515,6 @@ const strategies = {
     }, { passive: false });
   },
   'mobile': (wrapper) => {
-    wrapper.addEventListener('touchmove', (event) => {
-      event.preventDefault();
-      let moveY = startY - e.touches[0].clientY;
-      uss.scrollYBy(moveY, wrapper, null, false);
-    }, { passive: false });
   },
   'tablet': (wrapper) => {
     wrapper.addEventListener('touchmove', (event) => {
@@ -537,38 +553,34 @@ const init = () => {
 
 const openMenu = (event) => {
   const deviceType = getDeviceType();
-  
-  switch  (deviceType) {
-    case "desktop": 
-    event.classList.toggle("change");
-    const listItems = $(".navbar li");
-    const hasChangeClass = event.classList.contains("change");
-  
-    listItems.each(function (i) {
-      const startOpacity = hasChangeClass ? 0 : 1;
-      const endOpacity = hasChangeClass ? 1 : 0;
-      const pointerEvents = hasChangeClass ? 'auto' : 'none';
-  
-      $(this).css('opacity', startOpacity)
-        .css('pointer-events', pointerEvents)
-        .animate({ opacity: endOpacity }, 500);
-    });
-    break;
+  event.classList.toggle("change");
+  const listItems = $(".navbar li");
+  const hasChangeClass = event.classList.contains("change");
+  const pointerEvents = hasChangeClass ? 'pointer' : 'none';
+  const startOpacity = hasChangeClass ? 0 : 1;
+  const endOpacity = hasChangeClass ? 1 : 0;
 
-    case "mobile": 
-    event.classList.toggle("change");
-    const listItems2 = $(".navbar li");
-    const hasChangeClass2 = event.classList.contains("change");
-  
-    listItems2.each(function (i) {
-      const startOpacity = hasChangeClass2 ? 0 : 1;
-      const endOpacity = hasChangeClass2 ? 1 : 0;
-      const pointerEvents = hasChangeClass2 ? 'auto' : 'none';
-  
-      $(this).css('opacity', startOpacity)
-        .css('pointer-events', pointerEvents)
-        .animate({ opacity: endOpacity }, 500);
-    });
-    break;
-  };
+  listItems.each(function (i) {
+    $(this).css('opacity', deviceType === "desktop" ? startOpacity : null)
+      .css('display', deviceType === "mobile" ? (hasChangeClass ? 'block' : 'none') : null)
+      .css('cursor', pointerEvents);
+
+    if (deviceType === "desktop") {
+      if (hasChangeClass) {
+        $(this).stop().animate({ opacity: endOpacity }, 500);
+      } else {
+        $(this).css('opacity', endOpacity);
+      }
+    }
+  });
+
+  if (deviceType === "mobile") {
+    const articles = $(".wrapper article");
+    // Hide articles when menu is open and show when menu is closed
+    if (hasChangeClass) {
+      articles.hide(); // or articles.css('display', 'none');
+    } else {
+      articles.show(); // or articles.css('display', 'block');
+    }
+  }
 }

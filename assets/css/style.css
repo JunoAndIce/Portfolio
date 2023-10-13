@@ -152,7 +152,7 @@ header {
   filter: brightness(50%);
   font-weight: 800;
   font-size: 20px;
-  cursor: pointer;
+  
 }
 
 .nav_item:hover {
@@ -665,6 +665,62 @@ text-align: center;
   margin-left: 0px;
 }
 
+.container { 
+  align-self: flex-start;
+}
+
+.commission_btn_ctn {
+  align-self: flex-end;
+}
+
+.coontainer  { 
+  flex: 1 0 50%; /* This makes the items take up 50% of the width */
+  max-width: 50%; /* This ensures the items don't grow beyond 50% */
+}
+
+.menu_bar {
+  display: flex;
+  
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;  
+  padding: 10px;
+}
+
+.navbar {
+  text-align: center;
+  flex-direction: column;
+  gap: 90px;
+
+}
+
+.navbar_ctn {
+  display: block;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* transform: scale(1.875); */
+  margin: auto;
+}
+
+.navbar li{
+  margin-right: 0px;
+  opacity: 1 !important;
+  display: none;
+}
+
+.navbar li a{
+  font-size: 40px;
+  
+}
+
+.seperate {
+  order: 2;
+  margin-top: 80px;
+  flex: 1 0 100%; /* This makes the item take up 100% of the width */
+  max-width: 100%;
+  max-height: 100%;
+}
+
     .body_title {
       font-size: 50px;
       font-weight: 800;
@@ -917,6 +973,7 @@ text-align: center;
     align-items: center;
     justify-content: center; /* This will stack the large image and the small images container vertically */
     transition: all .3s ease-in-out;
+    margin-bottom: 20px;
   }
   
   .small_img_ctn {
@@ -929,7 +986,7 @@ text-align: center;
   .large_img {
     width: 100%;
     height: 100%;
-    filter: grayscale(85%) brightness(50%); /* Make the image grayscale and darken */
+    filter: grayscale(0%) brightness(100%); /* Make the image grayscale and darken */
     transition: filter 0.5s ease, transform 0.5s ease; /* Transition effect for the filter and transform */
   }
   
@@ -948,7 +1005,7 @@ text-align: center;
   }
   
   .sI:hover {
-    filter: grayscale(0%) brightness(100%); /* Full color on hover */
+    filter: grayscale(85%) brightness(50%); /* Full color on hover */
     transform: scale(1.03); /* Slightly increase size on hover */
     z-index: 1;
   }
