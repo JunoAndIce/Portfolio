@@ -1,39 +1,69 @@
 const marginTopValues = ["20px", "20px", "20px", "20px", "20px", "20px", "20px", "20px"]; // Add more values as needed
 var currentIndex = marginTopValues.length - 1; // Start at the end of the array
 let lastClickedImagePath = '';
-let lastClickedSmallImagePaths = ['','','',''];
+let lastClickedSmallImagePaths = ['', '', '', ''];
 let lastClickedProject = '';
 
 // Define project information in an array of objects
 const projects = [
   {
     id: 'Chronoscape',
-    largeImagePath: '/Chronoscape/chronoscape.jpg',
+    largeImagePath: '/Chronoscape/chronoscape.webp',
     smallImagePaths: [
-      '/Chronoscape/chronoscape_2.png',
-      '/Chronoscape/chronoscape_3.png',
-      '/Chronoscape/chronoscape_4.png',
-      '/Chronoscape/chronoscape_5.png',
+      '/Chronoscape/chronoscape_2.webp',
+      '/Chronoscape/chronoscape_3.webp',
+      '/Chronoscape/chronoscape_4.webp',
+      '/Chronoscape/chronoscape_5.webp',
     ],
   },
   {
     id: 'Showdown',
-    largeImagePath: '/Showdown/showdown.png',
+    largeImagePath: '/Showdown/showdown.webp',
     smallImagePaths: [
-      '/Showdown/showdown_2.png',
-      '/Showdown/showdown_3.png',
-      '/Showdown/showdown_4.png',
-      '/Showdown/showdown_5.png',
+      '/Showdown/showdown_2.webp',
+      '/Showdown/showdown_3.webp',
+      '/Showdown/showdown_4.webp',
+      '/Showdown/showdown_5.webp',
     ],
   },
   {
     id: 'Noobz',
-    largeImagePath: '/Noobz/noobz.png',
+    largeImagePath: '/Noobz/noobz.webp',
     smallImagePaths: [
-      '/Noobz/noobz_2.png',
-      '/Noobz/noobz_3.png',
-      '/Noobz/noobz_4.png',
-      '/Noobz/noobz_5.png',
+      '/Noobz/noobz_2.webp',
+      '/Noobz/noobz_3.webp',
+      '/Noobz/noobz_4.webp',
+      '/Noobz/noobz_5.webp',
+    ],
+  },
+  {
+    id: 'HWY6',
+    largeImagePath: '/hwy6/HWY6.webp',
+    smallImagePaths: [
+      '/hwy6/HWY6_1.webp',
+      '/hwy6/HWY6_2.webp',
+      '/hwy6/HWY6_3.webp',
+      '/hwy6/HWY6_4.webp',
+    ],
+  },
+  {
+    id: 'SCG',
+    largeImagePath: '/scg/SCG.webp',
+    smallImagePaths: [
+      '/scg/SCG_1.webp',
+      '/scg/SCG_2.webp',
+      '/scg/SCG_3.webp',
+      '/scg/SCG_4.webp',
+    ],
+  },
+  {
+    id: 'DJAY',
+    largeImagePath: '/djay/djay.webp',
+    smallImagePaths: [
+      '/djay/djay_1.webp',
+      '/djay/djay_2.webp',
+      '/djay/djay_3.webp',
+      '/djay/djay_4.webp',
     ],
   },
   // Add more projects here
@@ -65,6 +95,10 @@ const projectTechShields = {
       src: 'https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white',
       href: 'https://www.heroku.com/home'
     },
+    {
+      src: 'https://img.shields.io/badge/Github-5FED83?style=for-the-badge&logo=github&logoColor=black',
+      href: 'https://github.com/jmcmillenmusic/chronoscape'
+    }
   ],
   'Showdown': [
     {
@@ -86,6 +120,10 @@ const projectTechShields = {
     {
       src: 'https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white',
       href: 'https://www.heroku.com/home'
+    },
+    {
+      src: 'https://img.shields.io/badge/Github-5FED83?style=for-the-badge&logo=github&logoColor=black',
+      href: 'https://github.com/DrProfDavis/shootem-up-showdown'
     }
   ],
   'Noobz': [
@@ -100,13 +138,70 @@ const projectTechShields = {
     {
       src: 'https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black',
       href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'
+    },
+    {
+      src: 'https://img.shields.io/badge/Github-5FED83?style=for-the-badge&logo=github&logoColor=black',
+      href: 'https://github.com/JunoAndIce/Noobz'
     }
   ],
-  '': [
-    '',
-    '',
-    ''
-  ]
+  'HWY6': [
+    {
+      src: 'https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white',
+      href: 'https://developer.mozilla.org/en-US/docs/Glossary/HTML5'
+    },
+    {
+      src: 'https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white',
+      href: 'https://developer.mozilla.org/en-US/docs/Web/CSS'
+    },
+    {
+      src: 'https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black',
+      href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'
+    },
+    {
+      src: 'https://img.shields.io/badge/Github-5FED83?style=for-the-badge&logo=github&logoColor=black',
+      href: 'https://github.com/hwysixstudios/HWY6-STUDIOS'
+    }
+  ],
+  'SCG': [
+    {
+      src: 'https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white',
+      href: 'https://developer.mozilla.org/en-US/docs/Glossary/HTML5'
+    },
+    {
+      src: 'https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white',
+      href: 'https://developer.mozilla.org/en-US/docs/Web/CSS'
+    },
+    {
+      src: 'https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black',
+      href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'
+    },
+    {
+      src: 'https://img.shields.io/badge/Github-5FED83?style=for-the-badge&logo=github&logoColor=black',
+      href: 'https://github.com/TerryW0610/Spirit-Capital-Group'
+    }
+  ],
+  'DJAY': [
+    {
+      src: 'https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB',
+      href: 'https://reactjs.org/'
+    },
+    {
+      src: 'https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black',
+      href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'
+    },
+    {
+      src: 'https://img.shields.io/badge/Yarn-2C8EBB?style=for-the-badge&logo=yarn&logoColor=white',
+      href: 'https://www.npmjs.com/'
+    },
+    {
+      src: 'https://img.shields.io/badge/Bulma-00D1B2?style=for-the-badge&logo=bulma&logoColor=white',
+      href: 'https://www.npmjs.com/'
+    },
+    {
+      src: 'https://img.shields.io/badge/Github-5FED83?style=for-the-badge&logo=github&logoColor=black',
+      href: 'https://github.com/JunoAndIce/dj-ay'
+    }
+  ],
   // Add more projects as needed
 };
 
@@ -114,8 +209,13 @@ const projectDescriptions = {
   'Chronoscape': 'Chronoscape is a Handlebars.js and Express.js choose your own adventure game built with Node.js, Express.js, MySQL, and Sequelize. The game features a short but interesting story and has the user travel through very familiar locations all written by me!<br><br>Chronoscape was the second project of my UTA Coding Bootcamp and challenged me and my fellow classmates to understand how to use handlebars.js and express.js to build a web application. We chose to build a choose your own adventure game because past students had failed to complete the project, and we took it upon ourselves to truly understand handlebars and implement it like never before.',
 
   'Showdown': 'Showdown is a React.js and MongoDB project. The game utilizes several npm packages to create a hex-grid shoot-em-out game. You will be timed on how fast you can complete 5 levels of the game and then the scores is saved to a Mongodb database.<br><br>Showdown was the third project of my UTA Coding Bootcamp and challenged my collaborators and I to use React and MongoDB to build a web application that functions seamlessly. We chose to make a React based aim trainer game for our project. ',
-  
+
   'Noobz': 'Noobz is an HTML and CSS project. It functions as a search engine for all video games and brings the most relevant youtube and twitch searches for said video game. The site features a nice sleek design that utilizes the Bulma CSS Framework and uses the YouTube, Twitch, and RAWG Gaming API. <br><br>Noobz was the first project of my UTA Coding Bootcamp and challenged my collaborators and I to use HTML and CSS to build a website that utilizes outside APIs. We chose to make a gaming focused website that utilizes the most prominent gaming APIs in order to build a video game search engine. ',
+
+  'HWY6': 'HWY 6 is my first attempt at a portfolio website for the HWY 6 Studio. It uses simple HTML, and CSS without any frameworks. The site features a simple design and a gallery to view specific projects. ',
+
+  'SCG': 'Spirit Capital Group is another simple website I built for a client. It uses HTML, CSS and JavaScript, without frameworks. The site features 4 pages, and an updated About me section. The page was a test of my skills and allowed me to work in a cooperative environment with other developers. The site was built with a focus on simplicity and ease of use, allowing users to navigate through the content effortlessly.<br><br>Spirit Capital Group was a project that allowed me to showcase my skills in web development while working with a team. It was a great opportunity to learn how to collaborate effectively and deliver a polished product to the client.',
+  'DJAY': 'DJ A.Y. is a React.js project that showcases the work of DJ A.Y. It features a sleek design and a gallery to view specific projects. The site was built with a focus on simplicity and ease of use, allowing users to easily see the relevant content and properly intereact with them. <br><br>DJ A.Y. was a fun site to work on, as it tested my knowledge on react.js and Vite.js. <br><br>https://junoandice.github.io/dj-ay',
   // Add more projects as needed
 };
 
@@ -127,7 +227,7 @@ const animateElement = (element, className, index, callback) => {
       marginTop: marginTop
     }, {
       duration: 500,
-      complete: function() {
+      complete: function () {
         $(this).removeClass(className); // Remove the class after the animation completes
         callback();
       }
@@ -146,7 +246,7 @@ const loadMoreInfo = (className, buttonDivId) => {
   switch (deviceType) {
     case 'desktop':
       $("#" + buttonDivId).hide();
-      
+
 
       if (elements.length > 0) {
         const animateNextElement = (index) => {
@@ -179,8 +279,8 @@ const loadMoreInfo = (className, buttonDivId) => {
         animateNextElement(0); // Start animation for the first element
       }
       break;
-    };
   };
+};
 
 
 // Reusable function to change image source
@@ -213,66 +313,50 @@ function changeProjectDescription(selector, projectId) {
   $(`${selector} span`).html(projectDescriptions[projectId]);
 }
 
-// Function to set up hover and click functionality for a project
+// Function to set up click functionality for a project
 function setupProject(project) {
   const { id, largeImagePath, smallImagePaths } = project;
   const selector = `#${id}`;
 
-  const hideElements = () => {
-    if (!$(selector).hasClass('clicked')) {
-      $('.large_img, .small_img1, .small_img2, .small_img3, .small_img4, .proj_name, .project_text, .project-tech span a, .desc_title').hide();
-    }
-  };
-
   const fadeInElements = (duration) => {
-    $('.large_img, .small_img1, .small_img2, .small_img3, .small_img4, .proj_name, .project_text, .project-tech span a, .desc_title').fadeIn(duration);
+    $(
+      '.large_img, .small_img1, .small_img2, .small_img3, .small_img4, ' +
+      '.proj_name, .project_text, .project-tech span a, .desc_title'
+    ).fadeIn(duration);
   };
 
   const updateUI = () => {
     changeImageSource('.large_img', largeImagePath);
     smallImagePaths.forEach((imgPath, i) => {
       changeImageSource(`.small_img${i + 1}`, imgPath);
-      changeProjectInfo(`.proj_name`, id);
-      changeTechShields(id);
-      changeProjectDescription('.project_text', id);
     });
+    changeProjectInfo('.proj_name', id);
+    changeTechShields(id);
+    changeProjectDescription('.project_text', id);
   };
 
-  const handleMouseEnter = () => {
-    hideElements();
-    updateUI();
-    fadeInElements(800);
-  };
-
-  const handleMouseLeave = () => {
-    setTimeout(() => {
-      if (!$(selector).hasClass('clicked')) {
-        changeImageSource('.large_img', lastClickedImagePath);
-        lastClickedSmallImagePaths.forEach((imgPath, i) => {
-          changeImageSource(`.small_img${i + 1}`, imgPath);
-          changeProjectInfo(`.proj_name`, lastClickedProject);
-          changeTechShields(lastClickedProject);
-          changeProjectDescription('.project_text', lastClickedProject);
-        });
-        fadeInElements(500);
-      }
-    }, 0);
-  };
-
-  const handleClick = () => {
+  const selectProject = (duration = 500) => {
     $('.item').removeClass('clicked');
     $(selector).addClass('clicked');
     updateUI();
+    fadeInElements(duration); 
+
+    // persist last clicked state
     localStorage.setItem('id', id);
     lastClickedImagePath = largeImagePath;
     lastClickedSmallImagePaths = smallImagePaths;
     lastClickedProject = id;
   };
 
-  $(selector).hover(handleMouseEnter, handleMouseLeave);
-  $(selector).click(handleClick);
-}
+  // click handler
+  $(selector).click(() => selectProject());
 
+  // auto-select if this was the last clicked project
+  const savedId = localStorage.getItem('id');
+  if (savedId === id) {
+    selectProject(0); // no fade delay on initial load
+  }
+}
 $(document).ready(function () {
   // Set up hover and click functionality for each project
   projects.forEach((project) => {
@@ -284,8 +368,8 @@ $(document).ready(function () {
   $(`#${lasClickedProject}`).click();
 });
 
-$(document).ready(function() {
-  $('.sI').on('click', function() {
+$(document).ready(function () {
+  $('.sI').on('click', function () {
     var smallImgSrc = $(this).attr('src');
     var largeImg = $('.large_img'); // Use id selector for the large image
     var largeImgSrc = largeImg.attr('src');
@@ -320,118 +404,74 @@ $(document).ready(function() {
 //   });
 // });
 
-$(function() {
+$(function () {
   const deviceType = getDeviceType();
 
-  switch (deviceType) {
-    case 'desktop':
-      var gallery = $('#gallery-container'),
-      items = gallery.find('li'),
-      len = items.length,
-      current = 1,  /* the current item we're looking */
+  // config per device
+  const config = {
+    desktop: {
+      gallery: $('#gallery-container'),
+      axis: 'top',
+      offset: -100,
+    },
+    mobile: {
+      gallery: $('#gallery ul'),
+      axis: 'left',
+      offset: -100,
+    },
+  };
 
-      first = items.filter(':first-child'),
-      second = items.filter((index) => index == 1),
-      last = items.filter(':last-child'),
-      secondlast = items.filter((index) => index == items.length - 2),
+  const { gallery, axis, offset } = config[deviceType];
+  const items = gallery.find('li');
+  const len = items.length;
 
-      triggers = $('button');
+  let current = 1;
 
-  /* 1. Cloning first and last items */
-  first.before(secondlast.clone(true));
+  const first = items.first();
+  const second = items.eq(1);
+  const last = items.last();
+  const secondLast = items.eq(items.length - 2);
+
+  const triggers = $('button');
+
+  /* 1. Clone first and last items for infinite effect */
+  first.before(secondLast.clone(true));
   first.before(last.clone(true));
   last.after(second.clone(true));
   last.after(first.clone(true));
 
-  /* 2. Set button handlers */
-  triggers.on('click', function() {
+  /* 2. Button handlers */
+  triggers.on('click', function () {
+    if (gallery.is(':animated')) return;
 
-    if (gallery.is(':not(:animated)')) {
+    const delta = this.id === 'prev' ? -1 : 1;
 
-      var cycle = false,
-          delta = (this.id === "prev") ? -1 : 1;
-          /* in the example buttons have id "prev" or "next" */
+    const animationProps = {};
+    animationProps[axis] = '+=' + offset * delta;
 
-      gallery.animate({ top: "+=" + (-100 * delta) }, function() {
+    gallery.animate(animationProps, function () {
+      current += delta;
 
-        current += delta;
+      let cycle = current === 0 || current > len;
 
-        /**
-         * we're cycling the slider when the value of "current" 
-         * variable (after increment/decrement) is 0 or when it exceeds
-         * the initial gallery length
-         */
-        cycle = !!(current === 0 || current > len);
+      if (cycle) {
+        current = current === 0 ? len : 1;
 
-        if (cycle) {
-          /* we switched from image 1 to 4-cloned or 
-             from image 4 to 1-cloned */
-          current = (current === 0) ? len : 1;
-          gallery.css({ top: -100 * (current - 1) });
-        }
-      });
-    }
+        const resetProps = {};
+        resetProps[axis] = offset * (current - (axis === 'top' ? 1 : -1));
+        // Desktop expects (current-1), mobile had (current+1) offset
+        resetProps[axis] = axis === 'top'
+          ? offset * (current - 1)
+          : offset * (current + 1);
 
+        gallery.css(resetProps);
+      }
+    });
   });
-      break;
-    case'mobile':
-    var gallery = $('#gallery ul'),
-      items   = gallery.find('li'),
-      len     = items.length,
-      current = 1,  /* the current item we're looking */
-      
-      first   = items.filter(':first-child'),
-      second  = items.filter((index)=>index==1),
-      last    = items.filter(':last-child'),
-      secondlast = items.filter((index)=>index==items.length-2),
-      
-      triggers = $('button');
-   
-
-  
-  /* 1. Cloning first and last items */
-  first.before(secondlast.clone(true)); 
-  first.before(last.clone(true)); 
-  last.after(second.clone(true)); 
-  last.after(first.clone(true)); 
-  
-  /* 2. Set button handlers */
-  triggers.on('click', function() {
-    
-    if (gallery.is(':not(:animated)')) {
-     
-        var cycle = false,
-            delta = (this.id === "prev")? -1 : 1;
-            /* in the example buttons have id "prev" or "next" */  
-    
-        gallery.animate({ left: "+=" + (-100 * delta) }, function() {
-      
-            current += delta;
-       
-            /** 
-             * we're cycling the slider when the the value of "current" 
-             * variable (after increment/decrement) is 0 or when it exceeds
-             * the initial gallery length
-             */          
-            cycle = !!(current === 0 || current > len );
-       
-            if (cycle) {
-                /* we switched from image 1 to 4-cloned or 
-                   from image 4 to 1-cloned */
-                current = (current === 0)? len : 1; 
-                gallery.css({left:  -100 * (current + 1) });
-            }
-        });   
-     }
-    
-  });
-    break;
-  }
-  
 });
 
 
-$(document).ready(function() {
+$(document).ready(function () {
   const words = ["Creative", "Innovator", "Designer", "Developer"]; // words to be typed
   let i = 0;
   let text = "";
@@ -440,7 +480,7 @@ $(document).ready(function() {
   // function to type out words
   const type = () => {
     var word = words[wordIndex];
-    if(i < word.length) {
+    if (i < word.length) {
       text += word[i];
       $("#animated-text").text("The " + text);
       $("#cursor").text('|'); // Add cursor
@@ -448,16 +488,16 @@ $(document).ready(function() {
     } else {
       // stop typing and start deleting after a word is typed
       clearInterval(typing);
-      setTimeout(function() {
+      setTimeout(function () {
         deleting = setInterval(deleteWord, 100);
       }, 2000);
     }
   }
-  
+
   // Remove cursor when finish typing and start deleting
   const deleteWord = () => {
     var word = words[wordIndex];
-    if(i > 0) {
+    if (i > 0) {
       text = text.slice(0, -1);
       $("#animated-text").text("The " + text);
       i--;
@@ -465,7 +505,7 @@ $(document).ready(function() {
       // stop deleting and start typing next word
       clearInterval(deleting);
       $("#cursor").text(''); // Remove cursor
-      if(wordIndex < words.length - 1) {
+      if (wordIndex < words.length - 1) {
         wordIndex++;
       } else {
         wordIndex = 0;
@@ -498,12 +538,12 @@ $(document).ready(function () {
 
 const goToPage = (page) => {
   $(".wrapper article").show();
-  document.getElementById(page).scrollIntoView({behavior: 'smooth'});
+  document.getElementById(page).scrollIntoView({ behavior: 'smooth' });
 
   const menuButton = document.querySelector('.container');
-    if (menuButton.classList.contains('change')) {
-      openMenu(menuButton);
-    }
+  if (menuButton.classList.contains('change')) {
+    openMenu(menuButton);
+  }
 }
 
 const strategies = {
